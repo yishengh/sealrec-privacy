@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SealRec Privacy Policy</title>
+  <meta name="description" content="Privacy policy for the SealRec Android app — offline sealed audio recording." />
+  <style>
+    :root {
+      --ink: #0e1a1f;
+      --teal: #0f7a6c;
+      --foam: #f4f8f9;
+      --mist: #e8eef0;
+      --slate: #4a5c63;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: linear-gradient(180deg, var(--foam), var(--mist));
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+    h1 {
+      font-size: 2rem;
+      margin: 0 0 0.35rem;
+      letter-spacing: -0.02em;
+    }
+    .brand {
+      color: var(--teal);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .meta {
+      color: var(--slate);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin: 2rem 0 0.6rem;
+      color: var(--teal);
+    }
+    p, li { color: var(--ink); }
+    ul { padding-left: 1.25rem; }
+    li { margin: 0.35rem 0; }
+    a { color: var(--teal); }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.25rem 1.4rem;
+      margin: 1rem 0;
+      border: 1px solid rgba(15, 122, 108, 0.12);
+    }
+    .lang-switch {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .lang-switch a {
+      text-decoration: none;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 122, 108, 0.25);
+    }
+    .lang-switch a.active {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+    [lang-section="zh"] { display: none; }
+    body.show-zh [lang-section="en"] { display: none; }
+    body.show-zh [lang-section="zh"] { display: block; }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(14, 26, 31, 0.1);
+      color: var(--slate);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="lang-switch">
+      <a href="#en" class="active" id="btn-en" onclick="setLang('en'); return false;">English</a>
+      <a href="#zh" id="btn-zh" onclick="setLang('zh'); return false;">中文</a>
+    </div>
+
+    <section lang-section="en">
+      <h1>Privacy Policy</h1>
+      <p class="brand">SealRec</p>
+      <p class="meta">Last updated: July 25, 2026</p>
+
+      <div class="card">
+        <p><strong>Summary:</strong> SealRec is designed to work fully offline. It does not include internet permission, does not upload your recordings, and does not use advertising or analytics SDKs. Contact: <a href="mailto:sealrec@fastmail.com">sealrec@fastmail.com</a>.</p>
+      </div>
+
+      <h2>1. Who we are</h2>
+      <p>SealRec (“the App”) is an Android application that records audio on your device, seals it with cryptographic hashes and a hardware-backed key, and lets you verify integrity offline.</p>
+      <p>Privacy questions: <a href="mailto:sealrec@fastmail.com">sealrec@fastmail.com</a>.</p>
+
+      <h2>2. Data SealRec processes</h2>
+      <p>Depending on how you use the App, the following may be processed <strong>only on your device</strong>:</p>
+      <ul>
+        <li><strong>Microphone audio</strong> — captured when you start a sealed recording, stored as local sealed WAV files (and optional local verification JSON sidecars).</li>
+        <li><strong>App settings</strong> — language, night mode, recording quality, notification-sound preference, stored locally.</li>
+        <li><strong>Local metadata</strong> — file names, durations, key fingerprint, device-local timestamps embedded in seals, recycle-bin state.</li>
+        <li><strong>Notifications</strong> — if you grant notification permission, used only to show the foreground recording service status.</li>
+      </ul>
+      <p>The App does <strong>not</strong> create user accounts and does not collect email addresses, contacts, location history, or advertising identifiers for our use.</p>
+
+      <h2>3. Permissions</h2>
+      <ul>
+        <li><strong>Microphone</strong> — required to record audio.</li>
+        <li><strong>Notifications</strong> (Android 13+) — required to show the ongoing sealed-recording foreground service.</li>
+        <li><strong>Storage (legacy Android 8–9 only)</strong> — only used if you export files to shared Music/Downloads folders on older OS versions.</li>
+      </ul>
+      <p>The App declares <strong>no network permissions</strong> (<code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code> are not used).</p>
+
+      <h2>4. How data is used</h2>
+      <p>Local audio and seal metadata are used solely to provide recording, sealing, offline verification, rename/export, and recycle-bin features you initiate.</p>
+      <p>Device-local timestamps in seals come from the device clock and are not provided by a trusted timestamping authority (TSA).</p>
+
+      <h2>5. Sharing and third parties</h2>
+      <p>We do not sell personal data. Because SealRec has no network access in the App, recordings are not transmitted to our servers.</p>
+      <p>If you export or share a file yourself (for example via another app or email), that sharing is under your control and subject to the other app’s or recipient’s policies.</p>
+      <p>Hardware-backed cryptography uses Android platform Keystore facilities on your device; we do not operate a remote key service.</p>
+
+      <h2>6. Retention and deletion</h2>
+      <p>Recordings remain on your device until you move them to the recycle bin and permanently delete them, or uninstall the App (which removes app-private storage). Exported copies in Music/Downloads remain until you delete them from those folders.</p>
+
+      <h2>7. Children</h2>
+      <p>SealRec is not directed at children under 13 (or the equivalent minimum age in your region). We do not knowingly collect personal information from children.</p>
+
+      <h2>8. International users</h2>
+      <p>Processing occurs on your device. If you later transfer exported files across borders, you are responsible for complying with applicable laws for that transfer.</p>
+
+      <h2>9. Changes</h2>
+      <p>We may update this policy when the App’s privacy practices change. The “Last updated” date above will be revised accordingly. Continued use after an update means you accept the revised policy.</p>
+
+      <h2>10. Contact</h2>
+      <p>For privacy requests or questions about SealRec:</p>
+      <p><a href="mailto:sealrec@fastmail.com">sealrec@fastmail.com</a></p>
+    </section>
+
+    <section lang-section="zh">
+      <h1>隐私政策</h1>
+      <p class="brand">SealRec</p>
+      <p class="meta">最近更新：2026 年 7 月 25 日</p>
+
+      <div class="card">
+        <p><strong>摘要：</strong>SealRec 设计为完全离线运行，不包含网络权限，不会上传你的录音，也不使用广告或分析 SDK。联系邮箱：<a href="mailto:sealrec@fastmail.com">sealrec@fastmail.com</a>。</p>
+      </div>
+
+      <h2>1. 我们是谁</h2>
+      <p>SealRec（「本应用」）是一款 Android 应用：在本机录制音频，使用密码学哈希与硬件密钥密封，并可离线验真。</p>
+      <p>隐私相关问题请联系：<a href="mailto:sealrec@fastmail.com">sealrec@fastmail.com</a>。</p>
+
+      <h2>2. 本应用处理的数据</h2>
+      <p>依你的使用方式，以下数据<strong>仅在本设备上</strong>处理：</p>
+      <ul>
+        <li><strong>麦克风音频</strong> — 开始密封录音时采集，保存为本地密封 WAV（以及可选的本地核验 JSON）。</li>
+        <li><strong>应用设置</strong> — 语言、夜间模式、录音质量、录音时是否允许通知音等，均保存在本地。</li>
+        <li><strong>本地元数据</strong> — 文件名、时长、密钥指纹、密封中的设备本地时间戳、回收站状态等。</li>
+        <li><strong>通知</strong> — 若你授予通知权限，仅用于显示前台录音服务状态。</li>
+      </ul>
+      <p>本应用<strong>不</strong>创建账户，也不会为运营方收集邮箱、通讯录、位置轨迹或广告标识符。</p>
+
+      <h2>3. 权限</h2>
+      <ul>
+        <li><strong>麦克风</strong> — 录音所必需。</li>
+        <li><strong>通知</strong>（Android 13+）— 用于显示正在进行的密封录音前台服务。</li>
+        <li><strong>存储</strong>（仅旧版 Android 8–9）— 仅在你导出到共享 Music/Downloads 目录时可能用到。</li>
+      </ul>
+      <p>本应用<strong>不声明网络权限</strong>（不使用 <code>INTERNET</code> / <code>ACCESS_NETWORK_STATE</code>）。</p>
+
+      <h2>4. 数据如何使用</h2>
+      <p>本地音频与密封元数据仅用于你主动发起的录音、密封、离线鉴定、重命名/导出与回收站功能。</p>
+      <p>密封中的时间戳来自设备本地时钟，并非可信时间戳机构（TSA）提供。</p>
+
+      <h2>5. 共享与第三方</h2>
+      <p>我们不出售个人数据。因应用内无网络访问，录音不会传输到我们的服务器。</p>
+      <p>若你自行导出或通过其他应用/邮件分享文件，该行为由你控制，并受对方应用或接收方政策约束。</p>
+      <p>硬件加密使用本机 Android Keystore；我们不运营远程密钥服务。</p>
+
+      <h2>6. 保留与删除</h2>
+      <p>录音保留在本机，直到你移入回收站并彻底删除，或卸载应用（将清除应用私有存储）。导出到 Music/Downloads 的副本需你自行在对应目录删除。</p>
+
+      <h2>7. 儿童</h2>
+      <p>SealRec 不以 13 岁以下儿童（或你所在地区的同等最低年龄）为对象。我们不会故意收集儿童的个人信息。</p>
+
+      <h2>8. 跨境</h2>
+      <p>处理发生在你的设备上。若你之后将导出文件跨境传输，须自行遵守适用法律。</p>
+
+      <h2>9. 变更</h2>
+      <p>本政策可能随应用隐私实践变更而更新，上方「最近更新」日期会相应修改。更新后继续使用即表示你接受修订后的政策。</p>
+
+      <h2>10. 联系方式</h2>
+      <p>如有隐私相关请求或问题，请联系：</p>
+      <p><a href="mailto:sealrec@fastmail.com">sealrec@fastmail.com</a></p>
+    </section>
+
+    <footer>
+      SealRec · <a href="mailto:sealrec@fastmail.com">sealrec@fastmail.com</a>
+    </footer>
+  </main>
+  <script>
+    function setLang(lang) {
+      document.body.classList.toggle('show-zh', lang === 'zh');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
+      history.replaceState(null, '', '#' + lang);
+    }
+    if (location.hash === '#zh' || /^zh\b/i.test(navigator.language || '')) {
+      setLang('zh');
+    }
+  </script>
+</body>
+</html>
