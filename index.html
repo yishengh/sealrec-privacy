@@ -217,9 +217,14 @@
       document.body.classList.toggle('show-zh', lang === 'zh');
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
       document.getElementById('btn-zh').classList.toggle('active', lang === 'zh');
-      history.replaceState(null, '', '#' + lang);
+      if (lang === 'zh') {
+        history.replaceState(null, '', '#zh');
+      } else {
+        history.replaceState(null, '', location.pathname);
+      }
     }
-    if (location.hash === '#zh' || /^zh\b/i.test(navigator.language || '')) {
+    // Default English; Chinese only when #zh is present.
+    if (location.hash === '#zh') {
       setLang('zh');
     }
   </script>
